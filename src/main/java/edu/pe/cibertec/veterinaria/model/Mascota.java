@@ -8,22 +8,28 @@ public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column (length = 80, nullable = false)
+
+    @Column(length = 80, nullable = false)
     private String nombre;
-    @Column (length = 80, nullable = false)
+
+    @Column(length = 80, nullable = false)
     private String tipo;
-    @Column (length = 80, nullable = false)
+
+    @Column(length = 80, nullable = false)
     private String raza;
+
     @Column
     private int edad;
+
     @Column
     private boolean estado;
+
     @ManyToOne
-    @JoinColumn ( name = "cliente_id")
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     public Mascota() {
-        this.cliente = new Cliente();
+        // No need to initialize cliente here
     }
 
     public int getId() {

@@ -11,18 +11,24 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(length = 80, nullable = false)
     private String nombre;
+
     @Column(length = 80, nullable = false)
     private String apellido;
+
     @Column
     private String correo;
+
     @Column
     private String telefono;
+
     @Column
     private String direccion;
-    @OneToMany( mappedBy = "clientes", cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
-    List<Mascota> mascotas;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Mascota> mascotas;
 
     public Cliente() {
         this.mascotas = new ArrayList<>();
@@ -82,5 +88,15 @@ public class Cliente {
 
     public void setMascotas(List<Mascota> mascotas) {
         this.mascotas = mascotas;
+    }
+
+    public void addMascota(Mascota mascota) {
+        mascotas.add(mascota);
+        mascota.setCliente(this);
+    }
+
+    public void removeMascota(Mascota mascota) {
+        mascotas.remove(mascota);
+        mascota.setCliente(null);
     }
 }
