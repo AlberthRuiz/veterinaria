@@ -121,45 +121,20 @@
         </ul>
       </div>
     </div>
+
     <!-- Main Content -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
       <div class="row">
         <div class="card">
           <div class="card-header">
-            Nuevo Cliente
+            <span> Clientes
+            <a th:href="@{/clientes/nuevo}" class="btn btn-outline-primary">
+              <i class="fa-solid fa-plus"></i>
+            </a>
+          </span>
           </div>
           <div class="card-body">            
-            <form th:action="@{/clientes/guardar}" th:object="${cliente}" method="post">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" th:field="*{nombre}" class="form-control" id="nombre"  >
-                </div>
-                <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" th:field="*{apellido}" class="form-control" id="apellido">
-                </div>
-                <div class="mb-3">
-                    <label for="correo" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control"  th:field="*{correo}" id="correo" >
-
-                </div>
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="text"  th:field="*{telefono}" class="form-control" id="telefono" >
-
-                </div>
-
-                <div class="mb-3">
-                    <label for="direccion" class="form-label">Dirección</label>
-                    <textarea class="form-control" th:field="*{direccion}" id="direccion" rows="3"></textarea>
-                </div>
-
-
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a th:href="@{/clientes}" class="btn btn-secondary me-md-2">Cancelar</a>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-            </form>
+                 
           </div>
         </div>
 
