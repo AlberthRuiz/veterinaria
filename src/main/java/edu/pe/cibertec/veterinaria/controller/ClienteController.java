@@ -58,5 +58,11 @@ public class ClienteController {
         model.addAttribute("cliente", cliente);
         return   "clientes/cliente-detail";
     }
+
+    @GetMapping("/eliminar/{id}")
+    public String eliminarCliente(@PathVariable("id") int id) {
+        clienteService.eliminar(id);
+        return "redirect:/clientes";
+    }
 }
 

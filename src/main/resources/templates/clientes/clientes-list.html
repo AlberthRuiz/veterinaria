@@ -159,8 +159,11 @@
                     <a class="btn btn-outline-secondary"  th:href="@{/clientes/editar/{id}(id=${cliente.id})}"> 
                       <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                    <a class="btn btn-outline-danger"> 
+                    <a  th:href="@{/clientes/eliminar/{id}(id=${cliente.id})}" 
+                        class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar?')"> 
                       <i class="fa-solid fa-trash"></i>
+
+                    
                     </a>
                   </td>
 

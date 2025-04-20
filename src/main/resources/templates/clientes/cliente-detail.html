@@ -141,7 +141,14 @@
                     <a  class="btn btn-warning" th:href="@{/clientes/editar/{id}(id=${cliente.id})}">
                         <i class="fas fa-edit"></i> Editar Cliente
                     </a>
-                </div>
+                    <a th:href="@{/clientes/eliminar/{id}(id=${cliente.id})}" 
+                    class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de eliminar?')">
+                     <i class="fas fa-trash"></i> Eliminar Cliente
+                    </a>
+                </div>               
+             </a>
+                
             </div>            
 
             
