@@ -126,10 +126,11 @@
       <div class="row">
         <div class="card">
           <div class="card-header">
-            Nuevo Cliente
+            <h3 th:text="${cliente.id == 0 ? 'Nuevo Cliente': 'Editar Cliente' }"></h3>
           </div>
           <div class="card-body">            
             <form th:action="@{/clientes/guardar}" th:object="${cliente}" method="post">
+                <input type="hidden" th:field="*{id}"/> 
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" th:field="*{nombre}" class="form-control" id="nombre"  >

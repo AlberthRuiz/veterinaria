@@ -29,6 +29,16 @@ public class ClienteController {
         model.addAttribute("cliente", new Cliente());
         return "clientes/cliente-form";
     }
+
+    @GetMapping("/editar/{id}")
+    public String editarCliente(@PathVariable("id") int id, Model model){
+        Cliente cliente = clienteService.obtener(id);
+        if(cliente == null )
+            return "redirect:/clientes";
+        model.addAttribute("cliente", cliente);
+        return "clientes/cliente-form";
+    }
+
     @PostMapping("/guardar")
     public String guardarCliente(Cliente cliente){
         clienteService.guardar(cliente);
