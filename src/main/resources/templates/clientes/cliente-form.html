@@ -121,53 +121,27 @@
         </ul>
       </div>
     </div>
-
     <!-- Main Content -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
       <div class="row">
         <div class="card">
           <div class="card-header">
-            <span> Clientes
-            <a th:href="@{/clientes/nuevo}" class="btn btn-outline-primary">
-              <i class="fa-solid fa-plus"></i>
-            </a>
-          </span>
+            Nuevo Cliente
           </div>
           <div class="card-body">            
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Correo</th>
-                  <th scope="col">Telefono</th>
-                  <th scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr th:each="cliente : ${clientes}">
-                  <td th:text="${cliente.id}"></td>
-                  <td th:text="${cliente.nombre}"></td>
-                  <td th:text="${cliente.apellido}"></td>
-                  <td th:text="${cliente.correo}"></td>
-                  <td th:text="${cliente.telefono}"></td>
-                  <td>
-                    <a class="btn btn-outline-primary ">
-                      <i class="fas fa-eye"></i>                      
-                    </a>
-                    <a class="btn btn-outline-secondary"> 
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                    <a class="btn btn-outline-danger"> 
-                      <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </td>
-
-                </tr>
-
-              </tbody>
-            </table>            
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
           </div>
         </div>
 

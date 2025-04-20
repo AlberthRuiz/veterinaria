@@ -16,6 +16,11 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
+    @GetMapping("/nuevo")
+    public String nuevoCliente(){
+        return "clientes/cliente-form";
+    }
+
     @GetMapping
     public String listarClientes(Model model) {
         List<Cliente> clientes = clienteService.listar();
