@@ -153,7 +153,7 @@
                   <td th:text="${cliente.correo}"></td>
                   <td th:text="${cliente.telefono}"></td>
                   <td>
-                    <a class="btn btn-outline-primary ">
+                    <a class="btn btn-outline-primary" th:href="@{/clientes/{id}(id=${cliente.id})}">
                       <i class="fas fa-eye"></i>                      
                     </a>
                     <a class="btn btn-outline-secondary"> 

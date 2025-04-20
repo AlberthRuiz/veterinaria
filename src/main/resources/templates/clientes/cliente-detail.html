@@ -127,14 +127,29 @@
       <div class="row">
         <div class="card">
           <div class="card-header">
-            <span> Clientes
-            <a th:href="@{/clientes/nuevo}" class="btn btn-outline-primary">
-              <i class="fa-solid fa-plus"></i>
-            </a>
-          </span>
+            <h4  th:text="${cliente.nombre + ' ' + cliente.apellido}" ></h4>           
+          
           </div>
           <div class="card-body">            
-                 
+            <div class="row mb-4">
+                <div class="col-md-6">            
+                    <p><strong>Correo:</strong> <span th:text="${cliente.correo ?: 'No Especificado'}"> Correo</span></p>
+                    <p><strong>Teléfono:</strong> <span th:text="${cliente.telefono}" >Teléfono</span></p>
+                    <p><strong>Dirección:</strong> <span th:text="${cliente.direccion}">Dirección</span></p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a  class="btn btn-warning">
+                        <i class="fas fa-edit"></i> Editar Cliente
+                    </a>
+                </div>
+            </div>            
+
+            
+            <div class="mt-4">
+                <a th:href="@{/clientes}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Volver a la lista
+                </a>
+            </div>
           </div>
         </div>
 
