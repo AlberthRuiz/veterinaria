@@ -24,6 +24,7 @@ public class ClienteController {
         model.addAttribute("clientes", clientes);
         return "clientes/clientes-list";
     }
+
     @GetMapping("/nuevo")
     public String nuevoCliente(Model model){
         model.addAttribute("cliente", new Cliente());
@@ -56,7 +57,7 @@ public class ClienteController {
         if(cliente == null )
             return "redirect:/clientes";
         model.addAttribute("cliente", cliente);
-        return   "clientes/cliente-detail";
+        return "clientes/cliente-detail";
     }
 
     @GetMapping("/eliminar/{id}")
@@ -65,4 +66,3 @@ public class ClienteController {
         return "redirect:/clientes";
     }
 }
-

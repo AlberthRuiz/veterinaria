@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Header/Navbar Fragment -->
+<nav th:fragment="header" class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" th:href="@{/}">
+      <i class="bi bi-activity me-2"></i>
+      <span class="fw-semibold">VetCare - Sprinboot</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-primary btn-sm" th:href="@{/login}">Iniciar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
