@@ -36,7 +36,6 @@ public class MascotaController {
         Mascota mascota = new Mascota();
         mascota.setCliente(new Cliente());
         model.addAttribute("mascota",  mascota);
-
         model.addAttribute("clientes", clienteService.listar());
         return "mascotas/mascota-form";
     }

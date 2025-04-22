@@ -44,7 +44,7 @@
                                 <option value="">Seleccione un cliente</option>
                                 <option th:each="cliente : ${clientes}"
                                         th:value="${cliente.id}"
-                                        th:text="${cliente.nombre}"
+                                        th:text="${cliente.nombre} + ' ' +  ${cliente.apellido}"
                                         th:selected="${mascota.cliente != null and mascota.cliente.id == cliente.id}"></option>
                             </select>
                         </div>
