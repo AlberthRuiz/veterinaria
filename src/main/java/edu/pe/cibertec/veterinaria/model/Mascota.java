@@ -26,10 +26,11 @@ public class Mascota {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    private Cliente cliente = new Cliente();
 
     public Mascota() {
         // No need to initialize cliente here
+
     }
 
     public int getId() {

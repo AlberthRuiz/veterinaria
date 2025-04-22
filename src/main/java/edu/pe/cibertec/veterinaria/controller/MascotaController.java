@@ -33,7 +33,10 @@ public class MascotaController {
 
     @GetMapping("/nuevo")
     public String nuevoCliente(Model model){
-        model.addAttribute("mascota", new Mascota());
+        Mascota mascota = new Mascota();
+        mascota.setCliente(new Cliente());
+        model.addAttribute("mascota",  mascota);
+
         model.addAttribute("clientes", clienteService.listar());
         return "mascotas/mascota-form";
     }
