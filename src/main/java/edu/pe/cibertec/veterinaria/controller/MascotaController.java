@@ -64,4 +64,5 @@ public class MascotaController {
         mascotaService.eliminar(id);
         return "redirect:/clientes";
     }
+
 }
