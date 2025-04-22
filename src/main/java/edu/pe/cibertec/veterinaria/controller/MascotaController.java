@@ -22,6 +22,8 @@ public class MascotaController {
     @Autowired
     MascotaService mascotaService;
 
+    @Autowired
+    ClienteService clienteService;
     @GetMapping
     public String listarClientes(Model model) {
         List<Mascota> mascotas = mascotaService.listar();
@@ -31,8 +33,9 @@ public class MascotaController {
 
     @GetMapping("/nuevo")
     public String nuevoCliente(Model model){
-        model.addAttribute("mascotas", new Mascota());
-        return "mascotas/mascotas-form";
+        model.addAttribute("mascota", new Mascota());
+        model.addAttribute("clientes", clienteService.listar());
+        return "mascotas/mascota-form";
     }
 
     @GetMapping("/editar/{id}")
